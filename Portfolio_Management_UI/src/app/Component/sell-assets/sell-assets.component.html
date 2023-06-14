@@ -1,0 +1,52 @@
+<app-navigationbar></app-navigationbar>
+<h2>Sell Assets</h2>
+<div class="container" style="text-align: center; ">
+  <h4></h4>
+  <!-- Select the stocks of company -->
+  <div *ngIf='arr.length > 0'>
+    <div class="alert alert-info text-center fs-5" role="alert" *ngIf="inputVal>max">
+      You only hold {{max}} Stocks in {{stocks}}!!!
+    </div>
+    <label for="stocks" style="font-size: medium;">Please select the stocks</label>
+    <select name="stocks" (change)='getMax()' class="custom-select custom-select-lg mb-3" id="stocks"
+      [(ngModel)]='stocks' style="align-items: center;margin:40px; width: 150px;">
+      <option *ngFor="let val of arr" [ngValue]='val'>{{val}}</option>
+    </select>
+    <!-- Select number of stocks and Add it-->
+    <div>
+      <label for="number" style="font-size: medium; width: 100px;">No.of stocks</label>
+      <input type="number" min="0" max="{{max}}" [(ngModel)]='inputVal' style="margin-left: 40px; width:100px;">
+      <button class="btn button" type="button" (click)='addValue()' [disabled]='!stocks || !inputVal ||inputVal>max'
+        style="margin: 20px; width: 100px;">Add</button>
+    </div>
+  </div>
+  <!-- View selected stocks and values -->
+  <div *ngIf='valuesObj.length>0'>
+    <div *ngIf='valuesObj.length>0'>
+      <div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Company stocks</th>
+              <th scope="col">Stocks value</th>
+              <th scope="col">Confirm</th>
+            </tr>
+          </thead>
+          <tbody style="color: white;">
+            <tr *ngFor="let val of valuesObj">
+              <td>{{val.name}}</td>
+              <td>{{val.value}}</td>
+              <td><button class="btn button btn-yellow" (click)='removeValue(val.name)'
+                  style="margin-left: 20px; width: 80px;">remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Final sell stocks button -->
+    <button type="button" class="btn button" (click)='calculate()' [disabled]='!(valuesObj.length>0)'
+      style="margin: 40px; width: 260px;">SELL STOCK</button>
+  </div>
+</div>
+
+<app-footer></app-footer>

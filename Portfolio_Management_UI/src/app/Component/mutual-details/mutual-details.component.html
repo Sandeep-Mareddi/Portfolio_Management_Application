@@ -1,0 +1,23 @@
+<app-navigationbar></app-navigationbar>
+<div class="container my-5 py-5" style="border-color: black; margin-top: 20px;">
+  <h2 class="text-center">Mutual Fund Details</h2>
+  <div class="mx-5 px-5">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr>
+          <th>MUTUALFUND_ID</th>
+          <th>MUTUALFUND_NAME</th>
+          <th>MUTUALFUND_VALUE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let price of Price">
+          <td>{{price.mutualFundId}}</td>
+          <td>{{price.mutualFundName}}</td>
+          <td>{{price.mutualFundValue}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>

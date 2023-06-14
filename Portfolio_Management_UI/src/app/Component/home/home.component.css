@@ -1,0 +1,7 @@
+.btn.button{
+  color: #D6D5CB;
+  font-weight: bold;
+  background-color: #371739;
+  border-radius: 50px;
+  transition: .2s;
+}

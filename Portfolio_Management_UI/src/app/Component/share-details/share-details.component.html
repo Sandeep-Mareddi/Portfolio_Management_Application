@@ -1,0 +1,23 @@
+<app-navigationbar></app-navigationbar>
+<div class="container my-5 py-5" style="border-color: black; margin-top: 20px;">
+  <h2 class="text-center">Share Price Details</h2>
+  <div class="mx-5 px-5">
+    <table class="table table-striped text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th>SHARE_ID</th>
+          <th>SHARE_NAME</th>
+          <th>SHARE_VALUE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let price of Price">
+          <td>{{price.shareId}}</td>
+          <td>{{price.shareName}}</td>
+          <td>{{price.shareValue}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>

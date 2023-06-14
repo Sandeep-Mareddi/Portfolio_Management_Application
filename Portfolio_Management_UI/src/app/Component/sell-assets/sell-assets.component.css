@@ -1,0 +1,28 @@
+h2 {
+  text-align: center;
+  margin: 50px;
+  color: #371739;
+}
+
+.table ,tbody,th,tr{
+  color: #371739;
+  /* background-color: #212529; */
+}
+
+label {
+  color: #371739;
+  font-weight: 500;
+}
+
+button.btn.button {
+  color: #D6D5CB;
+  font-weight: bold;
+  background-color: #371739;
+  border-radius: 50px;
+}
+
+button.btn.button.btn-yellow {
+  color: #371739;
+  background-color: #ffbf00;
+
+}

@@ -1,0 +1,17 @@
+.container{
+  color: #371739;
+  /* background-color: #c6bbac; */
+}
+table{
+  color: #371739;
+
+}
+table, th, td {
+  border-bottom: 1px solid #371739;
+  font-size: larger;
+}
+.mx-5.px-5{
+  border: solid #371739 0.75px;
+  border-radius: 10px;
+  padding: 50px;
+}
